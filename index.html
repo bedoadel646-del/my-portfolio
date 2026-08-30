@@ -15,13 +15,13 @@
   <style>
     /* ==================== ROOT VARIABLES & THEME ==================== */
     :root {
-      --bg-dark: #0a0f1d;
-      --card-bg: #111a2e;
-      --card-border: #1e2c4d;
+      --bg-dark: #070b14;
+      --card-bg: #0f172a;
+      --card-border: #1e293b;
       --accent-cyan: #00f2fe;
       --accent-blue: #4facfe;
-      --accent-glow: rgba(0, 242, 254, 0.35);
-      --text-main: #e2e8f0;
+      --accent-glow: rgba(0, 242, 254, 0.4);
+      --text-main: #f1f5f9;
       --text-muted: #94a3b8;
       --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -49,7 +49,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.8) 0%, #060913 100%),
+      background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.85) 0%, #04060a 100%),
                   linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
                   linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
       background-size: 100% 100%, 45px 45px, 45px 45px;
@@ -63,7 +63,7 @@
     .hover-vibe:hover {
       animation: cyberFloat 0.6s ease-in-out infinite alternate;
       box-shadow: 0 10px 25px var(--accent-glow);
-      border-color: var(--accent-cyan);
+      border-color: var(--accent-cyan) !important;
     }
 
     @keyframes cyberFloat {
@@ -78,7 +78,7 @@
       left: 0;
       width: 100%;
       height: 70px;
-      background: rgba(10, 15, 29, 0.85);
+      background: rgba(7, 11, 20, 0.9);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--card-border);
       display: flex;
@@ -118,9 +118,9 @@
       right: -320px;
       width: 300px;
       height: 100%;
-      background: #0d1527;
+      background: #0b1120;
       border-left: 1px solid var(--card-border);
-      box-shadow: -10px 0 30px rgba(0,0,0,0.7);
+      box-shadow: -10px 0 30px rgba(0,0,0,0.8);
       transition: right 0.4s ease;
       z-index: 1100;
       padding: 30px 20px;
@@ -136,7 +136,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       border-bottom: 1px solid var(--card-border);
       padding-bottom: 15px;
     }
@@ -154,7 +154,7 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       overflow-y: auto;
     }
 
@@ -184,7 +184,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -197,15 +197,15 @@
 
     /* ==================== SECTIONS GENERAL ==================== */
     section {
-      padding: 90px 20px 40px;
-      max-width: 1100px;
+      padding: 60px 20px 40px;
+      max-width: 1150px;
       margin: 0 auto;
     }
 
     .section-title {
       text-align: center;
       font-size: 2rem;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
       color: #fff;
       position: relative;
       font-family: 'Fira Code', monospace;
@@ -226,14 +226,14 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding-top: 40px;
+      padding-top: 130px; /* Fully clears the navbar so circle is complete */
     }
 
     .profile-img-wrap {
-      width: 200px;
-      height: 200px;
+      width: 210px;
+      height: 210px;
       border-radius: 50%;
-      border: 3px solid var(--accent-cyan);
+      border: 3.5px solid var(--accent-cyan);
       box-shadow: 0 0 25px var(--accent-glow);
       overflow: hidden;
       margin-bottom: 25px;
@@ -260,7 +260,7 @@
     .hero-tags {
       font-family: 'Fira Code', monospace;
       color: var(--accent-cyan);
-      font-size: 1.05rem;
+      font-size: 1rem;
       margin-bottom: 20px;
     }
 
@@ -268,10 +268,10 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 30px;
-      margin-top: 20px;
+      padding: 25px 30px;
+      margin-top: 15px;
       max-width: 850px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
 
     /* ==================== 3. EDUCATION ==================== */
@@ -281,37 +281,39 @@
       border-radius: 12px;
       padding: 25px;
       margin-bottom: 20px;
-      position: relative;
     }
     .badge {
       display: inline-block;
       background: rgba(0, 242, 254, 0.1);
       color: var(--accent-cyan);
-      padding: 4px 12px;
+      padding: 4px 14px;
       border-radius: 20px;
       font-size: 0.85rem;
       font-family: 'Fira Code', monospace;
-      margin-top: 8px;
+      margin-top: 10px;
+      border: 1px solid rgba(0, 242, 254, 0.3);
     }
 
-    /* ==================== 4. SKILLS & 6. SERVICES ==================== */
+    /* ==================== GRIDS & CARDS ==================== */
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 22px;
     }
 
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 25px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
     }
 
     .card h3 {
       color: var(--accent-cyan);
-      margin-bottom: 15px;
-      font-size: 1.2rem;
+      margin-bottom: 12px;
+      font-size: 1.15rem;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -324,12 +326,34 @@
     }
 
     .skill-pill {
-      background: #090e1a;
+      background: #070d18;
       border: 1px solid var(--card-border);
       padding: 6px 12px;
       border-radius: 6px;
       font-size: 0.85rem;
       font-family: 'Fira Code', monospace;
+    }
+
+    /* Thumbnail Box for Experience & Certifications */
+    .card-banner {
+      width: 100%;
+      height: 140px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      border: 1px solid var(--card-border);
+      background: #070d18;
+    }
+    .card-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .card-banner.contain-mode img {
+      object-fit: contain;
+      padding: 10px;
+      background: #ffffff0a;
     }
 
     /* ==================== 7. PROJECTS ==================== */
@@ -344,20 +368,20 @@
 
     .project-preview {
       width: 100%;
-      height: 180px;
-      background: linear-gradient(135deg, #091224, #1a2744);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-cyan);
+      height: 170px;
+      overflow: hidden;
       border-bottom: 1px solid var(--card-border);
-      position: relative;
+      background: #0a1120;
     }
 
-    .project-preview i {
-      font-size: 3rem;
-      margin-bottom: 8px;
+    .project-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover .project-preview img {
+      transform: scale(1.06);
     }
 
     .project-content {
@@ -374,12 +398,17 @@
       margin-top: auto;
       padding: 10px 16px;
       background: linear-gradient(90deg, #00f2fe, #4facfe);
-      color: #060913;
+      color: #04060a;
       text-decoration: none;
       font-weight: 600;
       border-radius: 6px;
       font-size: 0.9rem;
       justify-content: center;
+      transition: var(--transition-smooth);
+    }
+    .project-btn:hover {
+      box-shadow: 0 0 15px var(--accent-glow);
+      transform: translateY(-2px);
     }
 
     /* ==================== 10. CONTACT & CTA ==================== */
@@ -387,7 +416,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 15px;
       margin-top: 25px;
     }
 
@@ -395,18 +424,19 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 12px 24px;
+      padding: 12px 22px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       color: #fff;
       border: 1px solid var(--card-border);
       background: var(--card-bg);
+      font-size: 0.95rem;
     }
-    .social-btn.linkedin { border-color: #0077b5; color: #0077b5; }
+    .social-btn.linkedin { border-color: #0077b5; color: #38bdf8; }
     .social-btn.github { border-color: #fff; color: #fff; }
     .social-btn.whatsapp { border-color: #25d366; color: #25d366; }
-    .social-btn.instagram { border-color: #e1306c; color: #e1306c; }
+    .social-btn.instagram { border-color: #e1306c; color: #f43f5e; }
     .social-btn.email { border-color: var(--accent-cyan); color: var(--accent-cyan); }
 
     footer {
@@ -453,7 +483,6 @@
   <!-- 1. COVER / HERO -->
   <section id="cover" class="hero-container">
     <div class="profile-img-wrap hover-vibe">
-      <!-- Direct path provided or local fallback -->
       <img src="image.jpeg" alt="Abdelrahman Adel Farouk" class="profile-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200?text=Abdelrahman+Adel';" />
     </div>
     <h1 class="hero-name">Abdelrahman Adel Farouk</h1>
@@ -462,7 +491,7 @@
     <!-- 2. ABOUT -->
     <div class="about-card hover-vibe" id="about">
       <p>
-        Artificial Intelligence & Cybersecurity specialist at Menofia University[cite: 1]. Proven expertise in Quality Assurance (Manual & Automation), API validation, defect documentation, and Network Security configurations utilizing Fortinet FortiGate enterprise firewalls. Experienced in executing structured testing workflows across leading crowdtesting platforms like uTest and Test IO.
+        Artificial Intelligence & Cybersecurity student at Menofia University[cite: 1]. Skilled in Full-Cycle Software Testing (Manual & Automation with Selenium/Postman) alongside Network Security administration and Fortinet FortiGate firewalls. Active freelance Quality Assurance tester delivering verified defect logs across platforms like uTest and Test IO.
       </p>
     </div>
   </section>
@@ -485,8 +514,8 @@
         <h3><i class="fa-solid fa-bug"></i> Testing & QA</h3>
         <div class="skill-pills">
           <span class="skill-pill">Manual Testing</span>
-          <span class="skill-pill">Test Automation (Selenium)</span>
-          <span class="skill-pill">API Testing (Postman)</span>
+          <span class="skill-pill">Selenium Automation</span>
+          <span class="skill-pill">Postman API Testing</span>
           <span class="skill-pill">Bug Tracking & Logging</span>
           <span class="skill-pill">Regression & Smoke Testing</span>
           <span class="skill-pill">Test Cases Design</span>
@@ -500,7 +529,7 @@
           <span class="skill-pill">NAT & SSL/SSH Inspection</span>
           <span class="skill-pill">Penetration Testing Basics</span>
           <span class="skill-pill">Linux & Kali Linux</span>
-          <span class="skill-pill">Wireshark & Traffic Analysis</span>
+          <span class="skill-pill">Wireshark Traffic Analysis</span>
         </div>
       </div>
       <div class="card hover-vibe">
@@ -509,7 +538,7 @@
           <span class="skill-pill">Python</span>
           <span class="skill-pill">Java</span>
           <span class="skill-pill">C++</span>
-          <span class="skill-pill">SQL & Databases</span>
+          <span class="skill-pill">SQL Databases</span>
           <span class="skill-pill">Bash Scripting</span>
           <span class="skill-pill">Git & GitHub</span>
           <span class="skill-pill">Jira & Trello</span>
@@ -522,34 +551,55 @@
   <section id="experience">
     <h2 class="section-title">Work Experience & Training</h2>
     <div class="grid-container">
+      
+      <!-- uTest / Test IO -->
       <div class="card hover-vibe">
-        <h3><i class="fa-solid fa-laptop-house"></i> Freelance Software Tester</h3>
+        <div class="card-banner">
+          <img src="QA Testing Process_ How Do We Test Your Product at MindInventory.jpg" alt="Freelance Testing" onerror="this.src='https://via.placeholder.com/300x140?text=Freelance+QA';" />
+        </div>
+        <h3><i class="fa-solid fa-laptop-house"></i> Freelance QA Tester</h3>
         <p style="color: var(--accent-cyan); font-size: 0.9rem;">uTest & Test IO</p>
-        <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem;">
-          Executing functional, exploratory, and usability testing cycles across multiple web and mobile environments, logging verified defects with reproducible evidence.
+        <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.88rem;">
+          Executing functional, exploratory, and usability testing cycles across multiple web/mobile environments, logging defects with clear evidence.
         </p>
       </div>
+
+      <!-- NTI -->
       <div class="card hover-vibe">
+        <div class="card-banner">
+          <img src="NTI.jpg" alt="NTI Network Security" onerror="this.src='https://via.placeholder.com/300x140?text=NTI+Security';" />
+        </div>
         <h3><i class="fa-solid fa-building-shield"></i> Network Security Trainee</h3>
         <p style="color: var(--accent-cyan); font-size: 0.9rem;">National Telecommunication Institute (NTI)</p>
-        <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem;">
-          Completed hands-on enterprise security training specializing in network architectures, routing, firewall administration, and Fortinet system configurations.
+        <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.88rem;">
+          Specialized in enterprise firewall administration, secure routing protocols, and Fortinet system configurations.
         </p>
       </div>
+
+      <!-- CIB -->
       <div class="card hover-vibe">
+        <div class="card-banner">
+          <img src="cib.jpg" alt="CIB Summer Internship" onerror="this.src='https://via.placeholder.com/300x140?text=CIB+Internship';" />
+        </div>
         <h3><i class="fa-solid fa-brain"></i> AI Generation Intern</h3>
         <p style="color: var(--accent-cyan); font-size: 0.9rem;">Commercial International Bank (CIB)</p>
-        <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem;">
-          Explored emerging Generative AI models, algorithmic problem solving, and analytical data implementations in the banking and fintech sectors.
+        <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.88rem;">
+          Participated in Generative AI explorations, data strategy, and modern digital banking workflows.
         </p>
       </div>
+
+      <!-- DEPI -->
       <div class="card hover-vibe">
+        <div class="card-banner contain-mode">
+          <img src="depi.png" alt="DEPI Trainee" onerror="this.src='https://via.placeholder.com/300x140?text=DEPI';" />
+        </div>
         <h3><i class="fa-solid fa-vial-circle-check"></i> Software Testing Trainee</h3>
         <p style="color: var(--accent-cyan); font-size: 0.9rem;">Digital Egypt Pioneers Initiative (DEPI)</p>
-        <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem;">
-          Executed 40+ manual test cases, automated API endpoints via Postman, and tracked software bugs across full-cycle development environments[cite: 1].
+        <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.88rem;">
+          Designed 40+ test cases, executed smoke & regression tests, and performed end-to-end API validations[cite: 1].
         </p>
       </div>
+
     </div>
   </section>
 
@@ -560,19 +610,19 @@
       <div class="card hover-vibe">
         <h3><i class="fa-solid fa-vial"></i> Full-Cycle Software Testing</h3>
         <p style="color: var(--text-muted); font-size: 0.9rem;">
-          Complete Manual, Functional, Regression, and Smoke testing for web/mobile apps with clear bug reproduction steps and severity reports.
+          Comprehensive manual, exploratory, functional, and regression testing with detailed defect documentation and reproduction steps.
         </p>
       </div>
       <div class="card hover-vibe">
-        <h3><i class="fa-solid fa-network-wired"></i> Network Security & Firewall Setup</h3>
+        <h3><i class="fa-solid fa-network-wired"></i> Network Security & FortiGate</h3>
         <p style="color: var(--text-muted); font-size: 0.9rem;">
-          Configuration of secure network policies, FortiGate firewall rules, NAT policies, and traffic inspection against unauthorized threats.
+          Setup and hardening of Fortinet FortiGate enterprise firewalls, NAT configuration, security policies, and SSL decryption.
         </p>
       </div>
       <div class="card hover-vibe">
         <h3><i class="fa-solid fa-bolt"></i> API & Automation Testing</h3>
         <p style="color: var(--text-muted); font-size: 0.9rem;">
-          Automated regression suites with Selenium alongside Postman collection runs to validate backend APIs and authentication flows.
+          Automated regression testing using Selenium WebDriver along with structured Postman collections for backend verification.
         </p>
       </div>
     </div>
@@ -586,13 +636,12 @@
       <!-- Mal3abk Project -->
       <div class="project-card hover-vibe">
         <div class="project-preview">
-          <i class="fa-solid fa-futbol"></i>
-          <span style="font-family: 'Fira Code', monospace; font-size: 0.9rem;">Live Web Application</span>
+          <img src="download.jpg" alt="Mal3abk Platform" onerror="this.src='https://via.placeholder.com/400x200?text=Mal3abk+System';" />
         </div>
         <div class="project-content">
-          <h3 style="color: #fff; margin-bottom: 8px;">Mal3abk System</h3>
+          <h3 style="color: #fff; margin-bottom: 8px;">Mal3abk Sports Management</h3>
           <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 15px;">
-            A complete sports club management and online field booking platform built using Python & backend database models.
+            Full-fledged sports club system for online court bookings and memberships built with Python backend models.
           </p>
           <a href="https://mal3abk.pythonanywhere.com/" target="_blank" class="project-btn">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Mal3abk Live
@@ -602,17 +651,16 @@
 
       <!-- Sweet Shop Project -->
       <div class="project-card hover-vibe">
-        <div class="project-preview">
-          <i class="fa-solid fa-cake-candles"></i>
-          <span style="font-family: 'Fira Code', monospace; font-size: 0.9rem;">QA Graduation Project</span>
+        <div class="project-preview" style="background: #0f1c3f; display: flex; align-items: center; justify-content: center;">
+          <img src="depi.png" alt="Sweet Shop DEPI" style="object-fit: contain; padding: 15px; width: 75%;" onerror="this.src='https://via.placeholder.com/400x200?text=Sweet+Shop+Testing';" />
         </div>
         <div class="project-content">
-          <h3 style="color: #fff; margin-bottom: 8px;">Sweet Shop Full Testing</h3>
+          <h3 style="color: #fff; margin-bottom: 8px;">Sweet Shop Full Testing Suite</h3>
           <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 15px;">
-            End-to-end automation and manual testing suite (DEPI Capstone), including UI automation, database queries, and defect logging.
+            DEPI Capstone project comprising comprehensive manual test cases, Selenium UI automation, and Postman API tests.
           </p>
           <a href="https://github.com/bedoadel646-del" target="_blank" class="project-btn">
-            <i class="fa-brands fa-github"></i> View on GitHub
+            <i class="fa-brands fa-github"></i> View Repository
           </a>
         </div>
       </div>
@@ -620,16 +668,15 @@
       <!-- FortiGate Network Security -->
       <div class="project-card hover-vibe">
         <div class="project-preview">
-          <i class="fa-solid fa-shield-halved"></i>
-          <span style="font-family: 'Fira Code', monospace; font-size: 0.9rem;">Network Security Lab</span>
+          <img src="Fortinet Wallpaper - Sci FI Vault.jpg" alt="Fortinet Project" onerror="this.src='https://via.placeholder.com/400x200?text=FortiGate+Security';" />
         </div>
         <div class="project-content">
-          <h3 style="color: #fff; margin-bottom: 8px;">FortiGate Infrastructure</h3>
+          <h3 style="color: #fff; margin-bottom: 8px;">FortiGate Network Defense</h3>
           <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 15px;">
-            Comprehensive enterprise network security architecture designed and tested on FortiGate firewalls for NTI graduation.
+            Enterprise security architecture and network topology configured on FortiGate for NTI graduation requirements.
           </p>
           <a href="#contact" class="project-btn">
-            <i class="fa-solid fa-circle-info"></i> Project Details
+            <i class="fa-solid fa-shield-halved"></i> Architecture Case
           </a>
         </div>
       </div>
@@ -637,16 +684,15 @@
       <!-- Enterprise Testing -->
       <div class="project-card hover-vibe">
         <div class="project-preview">
-          <i class="fa-solid fa-hotel"></i>
-          <span style="font-family: 'Fira Code', monospace; font-size: 0.9rem;">Platform Testing</span>
+          <img src="QA Testing Process_ How Do We Test Your Product at MindInventory.jpg" alt="Testing Platform Audits" onerror="this.src='https://via.placeholder.com/400x200?text=QA+Audits';" />
         </div>
         <div class="project-content">
-          <h3 style="color: #fff; margin-bottom: 8px;">Rixos & H&M Testing Audits</h3>
+          <h3 style="color: #fff; margin-bottom: 8px;">Rixos & H&M Platform Audits</h3>
           <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 15px;">
-            Execution of deep exploratory and functional test procedures on commercial web portals to pinpoint UX, booking, and navigation issues.
+            Thorough functional QA testing, user journeys validation, and defect hunting for commercial platforms.
           </p>
           <a href="#contact" class="project-btn">
-            <i class="fa-solid fa-file-lines"></i> Case Study
+            <i class="fa-solid fa-magnifying-glass-check"></i> Audit Review
           </a>
         </div>
       </div>
@@ -658,21 +704,31 @@
   <section id="achievements">
     <h2 class="section-title">Achievements & Certifications</h2>
     <div class="grid-container">
+      
       <div class="card hover-vibe">
-        <i class="fa-solid fa-certificate" style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 10px;"></i>
-        <h3 style="margin-bottom: 5px;">DEPI Round 4 Certificate</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Software Testing & Development Specialist (DEPI Track).</p>
+        <div class="card-banner contain-mode">
+          <img src="depi.png" alt="DEPI Certificate" onerror="this.src='https://via.placeholder.com/300x140?text=DEPI+R4';" />
+        </div>
+        <h3><i class="fa-solid fa-certificate"></i> DEPI Round 4 Graduate</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">Software Testing & QA Specialist certificate from the Ministry of Communications.</p>
       </div>
+
       <div class="card hover-vibe">
-        <i class="fa-solid fa-award" style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 10px;"></i>
-        <h3 style="margin-bottom: 5px;">NTI Network Security</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Enterprise Network Defense & Fortinet Firewalls Specialization.</p>
+        <div class="card-banner">
+          <img src="NTI.jpg" alt="NTI Certificate" onerror="this.src='https://via.placeholder.com/300x140?text=NTI+Cert';" />
+        </div>
+        <h3><i class="fa-solid fa-award"></i> NTI Network Security</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">Enterprise Network Defense & Fortinet Firewalls Specialization.</p>
       </div>
+
       <div class="card hover-vibe">
-        <i class="fa-solid fa-medal" style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 10px;"></i>
-        <h3 style="margin-bottom: 5px;">CIB Generation AI</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">FinTech, AI Architectures & Data Strategy Internship.</p>
+        <div class="card-banner">
+          <img src="cib.jpg" alt="CIB Internship" onerror="this.src='https://via.placeholder.com/300x140?text=CIB+AI';" />
+        </div>
+        <h3><i class="fa-solid fa-medal"></i> CIB Generation AI</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">FinTech, AI Architectures & Data Strategy Internship Certificate.</p>
       </div>
+
     </div>
   </section>
 
@@ -690,7 +746,7 @@
         <p style="font-style: italic; color: var(--text-muted); margin-bottom: 15px;">
           "High attention to detail in QA documentation, API testing pipelines, and rapid turnaround on crowdtesting bug reporting."
         </p>
-        <strong style="color: var(--accent-cyan);">QA Project Manager</strong>
+        <strong style="color: var(--accent-cyan);">QA Project Lead</strong>
       </div>
     </div>
   </section>
@@ -749,7 +805,7 @@
     closeMenuBtn.addEventListener('click', closeSidebar);
     sidebarOverlay.addEventListener('click', closeSidebar);
 
-    // Close sidebar when clicking any navigation link
+    // Close sidebar on item click
     navItems.forEach(item => {
       item.addEventListener('click', closeSidebar);
     });
