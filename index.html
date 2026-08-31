@@ -226,7 +226,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding-top: 130px; /* Fully clears the navbar so circle is complete */
+      padding-top: 130px;
     }
 
     .profile-img-wrap {
@@ -334,7 +334,6 @@
       font-family: 'Fira Code', monospace;
     }
 
-    /* Thumbnail Box for Experience & Certifications */
     .card-banner {
       width: 100%;
       height: 140px;
@@ -405,10 +404,108 @@
       font-size: 0.9rem;
       justify-content: center;
       transition: var(--transition-smooth);
+      cursor: pointer;
+      border: none;
     }
     .project-btn:hover {
       box-shadow: 0 0 15px var(--accent-glow);
       transform: translateY(-2px);
+    }
+
+    /* ==================== MODAL OVERLAY & POPUP ==================== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(4, 7, 15, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      background: #0d1527;
+      border: 1px solid var(--accent-cyan);
+      box-shadow: 0 0 35px rgba(0, 242, 254, 0.25);
+      border-radius: 14px;
+      width: 100%;
+      max-width: 950px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 30px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 1.8rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .modal-close:hover {
+      color: var(--accent-cyan);
+    }
+    .modal-title {
+      font-size: 1.6rem;
+      color: #fff;
+      font-family: 'Fira Code', monospace;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .modal-img-wrap {
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #070d18;
+      transition: var(--transition-smooth);
+    }
+    .modal-img-wrap:hover {
+      border-color: var(--accent-cyan);
+      transform: scale(1.02);
+    }
+    .modal-img-wrap img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+    .config-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 15px 0;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .config-list li {
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .config-list li i {
+      color: var(--accent-cyan);
+      margin-top: 4px;
     }
 
     /* ==================== 10. CONTACT & CTA ==================== */
@@ -564,17 +661,22 @@
         </p>
       </div>
 
-      <!-- NTI -->
-      <div class="card hover-vibe">
-        <div class="card-banner">
-          <img src="NTI.jpg" alt="NTI Network Security" onerror="this.src='https://via.placeholder.com/300x140?text=NTI+Security';" />
+      <!-- NTI Link to PPTX -->
+      <a href="FortiGate_7.4_Security_Engineering.pptx" download style="text-decoration: none; color: inherit; display: block;">
+        <div class="card hover-vibe" style="cursor: pointer; height: 100%;">
+          <div class="card-banner">
+            <img src="NTI.jpg" alt="NTI Network Security" onerror="this.src='https://via.placeholder.com/300x140?text=NTI+Security';" />
+          </div>
+          <h3><i class="fa-solid fa-building-shield"></i> Network Security Trainee</h3>
+          <p style="color: var(--accent-cyan); font-size: 0.9rem;">National Telecommunication Institute (NTI)</p>
+          <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.88rem;">
+            Specialized in enterprise firewall administration, secure routing protocols, and Fortinet system configurations.
+          </p>
+          <span style="color: var(--accent-cyan); font-size: 0.82rem; margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;">
+            <i class="fa-solid fa-file-powerpoint"></i> Open Presentation (.pptx)
+          </span>
         </div>
-        <h3><i class="fa-solid fa-building-shield"></i> Network Security Trainee</h3>
-        <p style="color: var(--accent-cyan); font-size: 0.9rem;">National Telecommunication Institute (NTI)</p>
-        <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.88rem;">
-          Specialized in enterprise firewall administration, secure routing protocols, and Fortinet system configurations.
-        </p>
-      </div>
+      </a>
 
       <!-- CIB -->
       <div class="card hover-vibe">
@@ -649,7 +751,7 @@
         </div>
       </div>
 
-      <!-- Sweet Shop Project -->
+      <!-- Sweet Shop Project (With Modal Trigger) -->
       <div class="project-card hover-vibe">
         <div class="project-preview" style="background: #0f1c3f; display: flex; align-items: center; justify-content: center;">
           <img src="depi.png" alt="Sweet Shop DEPI" style="object-fit: contain; padding: 15px; width: 75%;" onerror="this.src='https://via.placeholder.com/400x200?text=Sweet+Shop+Testing';" />
@@ -657,15 +759,15 @@
         <div class="project-content">
           <h3 style="color: #fff; margin-bottom: 8px;">Sweet Shop Full Testing Suite</h3>
           <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 15px;">
-            DEPI Capstone project comprising comprehensive manual test cases, Selenium UI automation, and Postman API tests.
+            DEPI Capstone project comprising comprehensive manual test cases, Selenium UI automation, execution video, and API tests.
           </p>
-          <a href="https://github.com/bedoadel646-del" target="_blank" class="project-btn">
-            <i class="fa-brands fa-github"></i> View Repository
-          </a>
+          <button class="project-btn" onclick="openModal('sweetShopModal')">
+            <i class="fa-solid fa-photo-film"></i> View Gallery & Video
+          </button>
         </div>
       </div>
 
-      <!-- FortiGate Network Security -->
+      <!-- FortiGate Network Security (With Modal Trigger) -->
       <div class="project-card hover-vibe">
         <div class="project-preview">
           <img src="Fortinet Wallpaper - Sci FI Vault.jpg" alt="Fortinet Project" onerror="this.src='https://via.placeholder.com/400x200?text=FortiGate+Security';" />
@@ -675,9 +777,9 @@
           <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 15px;">
             Enterprise security architecture and network topology configured on FortiGate for NTI graduation requirements.
           </p>
-          <a href="#contact" class="project-btn">
-            <i class="fa-solid fa-shield-halved"></i> Architecture Case
-          </a>
+          <button class="project-btn" onclick="openModal('fortiGateModal')">
+            <i class="fa-solid fa-shield-halved"></i> View 14 Tasks & Screenshots
+          </button>
         </div>
       </div>
 
@@ -721,13 +823,19 @@
         <p style="color: var(--text-muted); font-size: 0.88rem;">Enterprise Network Defense & Fortinet Firewalls Specialization.</p>
       </div>
 
-      <div class="card hover-vibe">
-        <div class="card-banner">
-          <img src="cib.jpg" alt="CIB Internship" onerror="this.src='https://via.placeholder.com/300x140?text=CIB+AI';" />
+      <!-- CIB Certificate Link to Image -->
+      <a href="Certificate_Certification - August Round.png" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+        <div class="card hover-vibe" style="cursor: pointer; height: 100%;">
+          <div class="card-banner">
+            <img src="Certificate_Certification - August Round.png" alt="CIB Internship Certificate" onerror="this.src='cib.jpg';" />
+          </div>
+          <h3><i class="fa-solid fa-medal"></i> CIB Generation AI</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">FinTech, AI Architectures & Data Strategy Internship Certificate.</p>
+          <span style="color: var(--accent-cyan); font-size: 0.82rem; margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Verified Certificate
+          </span>
         </div>
-        <h3><i class="fa-solid fa-medal"></i> CIB Generation AI</h3>
-        <p style="color: var(--text-muted); font-size: 0.88rem;">FinTech, AI Architectures & Data Strategy Internship Certificate.</p>
-      </div>
+      </a>
 
     </div>
   </section>
@@ -782,6 +890,77 @@
     <p>© 2026 Abdelrahman Adel Farouk. All Rights Reserved.</p>
   </footer>
 
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- SWEET SHOP MODAL -->
+  <div class="modal" id="sweetShopModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('sweetShopModal')">&times;</button>
+      <h2 class="modal-title"><i class="fa-solid fa-cake-candles" style="color: var(--accent-cyan);"></i> Sweet Shop QA Graduation Project</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        End-to-End Quality Assurance Project covering Test Cases, Bug Reporting, Automation Scripts, and Execution Demos.
+      </p>
+
+      <!-- Video Player -->
+      <div style="margin: 20px 0; border: 1px solid var(--accent-cyan); border-radius: 8px; overflow: hidden; background: #000;">
+        <video controls style="width: 100%; max-height: 400px; display: block;">
+          <source src="Testing .mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <h3 style="color: var(--accent-cyan); margin-top: 25px;">Project Documentation & Screenshots</h3>
+      <div class="modal-gallery">
+        <div class="modal-img-wrap"><a href="1.jpg" target="_blank"><img src="1.jpg" alt="Sweet Shop Step 1"></a></div>
+        <div class="modal-img-wrap"><a href="2.jpg" target="_blank"><img src="2.jpg" alt="Sweet Shop Step 2"></a></div>
+        <div class="modal-img-wrap"><a href="3.jpg" target="_blank"><img src="3.jpg" alt="Sweet Shop Step 3"></a></div>
+        <div class="modal-img-wrap"><a href="4.jpg" target="_blank"><img src="4.jpg" alt="Sweet Shop Step 4"></a></div>
+        <div class="modal-img-wrap"><a href="5.jpg" target="_blank"><img src="5.jpg" alt="Sweet Shop Step 5"></a></div>
+        <div class="modal-img-wrap"><a href="6.jpg" target="_blank"><img src="6.jpg" alt="Sweet Shop Step 6"></a></div>
+        <div class="modal-img-wrap"><a href="7.jpg" target="_blank"><img src="7.jpg" alt="Sweet Shop Step 7"></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORTIGATE MODAL -->
+  <div class="modal" id="fortiGateModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('fortiGateModal')">&times;</button>
+      <h2 class="modal-title"><i class="fa-solid fa-shield-halved" style="color: var(--accent-cyan);"></i> FortiGate 7.4 Security Engineering</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        Enterprise Security Lab configuration and architecture deployed for NTI Network Security specialization.
+      </p>
+
+      <h3 style="color: var(--accent-cyan); margin-top: 20px;">Detailed 14 Configuration Tasks:</h3>
+      <ul class="config-list">
+        <li><i class="fa-solid fa-circle-check"></i> 1. Configure FortiGate, Windows Machine [Virtual] and Web Server (172.20.10.200/24).</li>
+        <li><i class="fa-solid fa-circle-check"></i> 2. Configure DHCP on FortiGate for Windows Machine (Range: 172.20.10.10 – 172.20.10.100).</li>
+        <li><i class="fa-solid fa-circle-check"></i> 3. Configure FortiGate internet routing and interface access.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 4. Configure Firewall Policy allowing Windows Machine internet access.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 5. Configure Firewall Policy allowing Windows Machine to access Web Server via HTTP/HTTPS only.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 6. Configure Firewall Policy allowing Web Server internet access via HTTP/HTTPS only.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 7. Configure Web Filtering on Windows Machine blocking YouTube & Facebook.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 8. Configure Application Control blocking Social Media categories.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 9. Configure Antivirus inspection on internet access policy with malware scanning.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 10. Configure Intrusion Prevention (IPS) profile applied on internet access policy.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 11. Configure SSL VPN on FortiGate allowing remote access to internal network.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 12. Configure Firewall Authentication using local user database before internet access.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 13. Create Firewall Policy denying traffic from specific geo-locations/countries to Web Server.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 14. Configure Site-to-Site IPsec VPN between two FortiGate devices.</li>
+      </ul>
+
+      <h3 style="color: var(--accent-cyan); margin-top: 25px;">Configuration Screenshots & Proofs:</h3>
+      <div class="modal-gallery">
+        <div class="modal-img-wrap"><a href="لقطة شاشة 2026-08-25 024734.png" target="_blank"><img src="لقطة شاشة 2026-08-25 024734.png" alt="FortiGate Proof 1"></a></div>
+        <div class="modal-img-wrap"><a href="لقطة شاشة 2026-08-25 024405.png" target="_blank"><img src="لقطة شاشة 2026-08-25 024405.png" alt="FortiGate Proof 2"></a></div>
+        <div class="modal-img-wrap"><a href="لقطة شاشة 2026-08-25 030552.png" target="_blank"><img src="لقطة شاشة 2026-08-25 030552.png" alt="FortiGate Proof 3"></a></div>
+        <div class="modal-img-wrap"><a href="لقطة شاشة 2026-08-25 031538.png" target="_blank"><img src="لقطة شاشة 2026-08-25 031538.png" alt="FortiGate Proof 4"></a></div>
+        <div class="modal-img-wrap"><a href="لقطة شاشة 2026-08-25 032629.png" target="_blank"><img src="لقطة شاشة 2026-08-25 032629.png" alt="FortiGate Proof 5"></a></div>
+        <div class="modal-img-wrap"><a href="لقطة شاشة 2026-08-25 031639.png" target="_blank"><img src="لقطة شاشة 2026-08-25 031639.png" alt="FortiGate Proof 6"></a></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ==================== JAVASCRIPT LOGIC ==================== -->
   <script>
     const openMenuBtn = document.getElementById('openMenuBtn');
@@ -790,13 +969,12 @@
     const sidebarOverlay = document.getElementById('sidebarOverlay');
     const navItems = document.querySelectorAll('.nav-item');
 
-    // Open Sidebar
+    // Sidebar handlers
     openMenuBtn.addEventListener('click', () => {
       sidebar.classList.add('open');
       sidebarOverlay.classList.add('open');
     });
 
-    // Close Sidebar
     const closeSidebar = () => {
       sidebar.classList.remove('open');
       sidebarOverlay.classList.remove('open');
@@ -804,10 +982,25 @@
 
     closeMenuBtn.addEventListener('click', closeSidebar);
     sidebarOverlay.addEventListener('click', closeSidebar);
+    navItems.forEach(item => item.addEventListener('click', closeSidebar));
 
-    // Close sidebar on item click
-    navItems.forEach(item => {
-      item.addEventListener('click', closeSidebar);
+    // Modal handlers
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on outer click
+    window.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal')) {
+        e.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
     });
   </script>
 </body>
