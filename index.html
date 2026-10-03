@@ -96,6 +96,35 @@
       letter-spacing: 1px;
     }
 
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .cv-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 242, 254, 0.08);
+      color: var(--accent-cyan);
+      border: 1px solid var(--accent-cyan);
+      padding: 7px 16px;
+      border-radius: 8px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    .cv-download-btn:hover {
+      background: var(--accent-cyan);
+      color: #04060a;
+      box-shadow: 0 0 15px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
     .hamburger-btn {
       background: none;
       border: 1px solid var(--card-border);
@@ -551,9 +580,16 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="brand-logo">&lt;Abdelrahman /&gt;</div>
-    <button class="hamburger-btn" id="openMenuBtn" aria-label="Open Navigation">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+    
+    <div class="nav-actions">
+      <!-- Direct Download CV Button -->
+      <a href="Abdelrahman Adel Farouk Ahmed.pdf" download="Abdelrahman Adel Farouk Ahmed.pdf" class="cv-download-btn">
+        <i class="fa-solid fa-file-arrow-down"></i> My CV
+      </a>
+      <button class="hamburger-btn" id="openMenuBtn" aria-label="Open Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
   </nav>
 
   <!-- SIDEBAR DRAWER -->
@@ -588,7 +624,7 @@
     <!-- 2. ABOUT -->
     <div class="about-card hover-vibe" id="about">
       <p>
-        Artificial Intelligence & Cybersecurity student at Menofia University. Skilled in Full-Cycle Software Testing (Manual & Automation with Selenium/Postman) alongside Network Security administration and Fortinet FortiGate firewalls. Active freelance Quality Assurance tester delivering verified defect logs across platforms like uTest and Test IO.
+        Artificial Intelligence & Cybersecurity student at Menofia University. Skilled in Full-Cycle Software Testing (Manual & Automation with Selenium/Postman) alongside Network Security administration and Fortinet FortiGate firewalls[cite: 10]. Active freelance Quality Assurance tester delivering verified defect logs across platforms like uTest and Test IO.
       </p>
     </div>
   </section>
@@ -598,7 +634,7 @@
     <h2 class="section-title">Education</h2>
     <div class="timeline-card hover-vibe">
       <h3 style="color: #fff;"><i class="fa-solid fa-university" style="color: var(--accent-cyan);"></i> Faculty of Artificial Intelligence, Menofia University</h3>
-      <p style="color: var(--text-muted); margin-top: 5px;">Bachelor's Degree - Cybersecurity Major (2024 - Present)</p>
+      <p style="color: var(--text-muted); margin-top: 5px;">Bachelor's Degree - Cybersecurity Major (2024 - Present)[cite: 10]</p>
       <span class="badge">Cumulative GPA: 3.25 / 4.00 (Very Good)</span>
     </div>
   </section>
@@ -668,9 +704,9 @@
             <img src="NTI.jpg" alt="NTI Network Security" onerror="this.src='https://via.placeholder.com/300x140?text=NTI+Security';" />
           </div>
           <h3><i class="fa-solid fa-building-shield"></i> Network Security Trainee</h3>
-          <p style="color: var(--accent-cyan); font-size: 0.9rem;">National Telecommunication Institute (NTI)</p>
+          <p style="color: var(--accent-cyan); font-size: 0.9rem;">National Telecommunication Institute (NTI)[cite: 10]</p>
           <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.88rem;">
-            Specialized in enterprise firewall administration, secure routing protocols, and Fortinet system configurations.
+            Specialized in enterprise firewall administration, secure routing protocols, and Fortinet system configurations[cite: 10].
           </p>
           <span style="color: var(--accent-cyan); font-size: 0.82rem; margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;">
             <i class="fa-solid fa-file-powerpoint"></i> Open Presentation (.pptx)
@@ -684,9 +720,9 @@
           <img src="cib.jpg" alt="CIB Summer Internship" onerror="this.src='https://via.placeholder.com/300x140?text=CIB+Internship';" />
         </div>
         <h3><i class="fa-solid fa-brain"></i> AI Generation Intern</h3>
-        <p style="color: var(--accent-cyan); font-size: 0.9rem;">Commercial International Bank (CIB)</p>
+        <p style="color: var(--accent-cyan); font-size: 0.9rem;">Commercial International Bank (CIB)[cite: 10]</p>
         <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.88rem;">
-          Participated in Generative AI explorations, data strategy, and modern digital banking workflows.
+          Participated in Generative AI explorations, data strategy, and modern digital banking workflows[cite: 10].
         </p>
       </div>
 
@@ -696,9 +732,9 @@
           <img src="depi.png" alt="DEPI Trainee" onerror="this.src='https://via.placeholder.com/300x140?text=DEPI';" />
         </div>
         <h3><i class="fa-solid fa-vial-circle-check"></i> Software Testing Trainee</h3>
-        <p style="color: var(--accent-cyan); font-size: 0.9rem;">Digital Egypt Pioneers Initiative (DEPI)</p>
+        <p style="color: var(--accent-cyan); font-size: 0.9rem;">Digital Egypt Pioneers Initiative (DEPI)[cite: 10]</p>
         <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.88rem;">
-          Designed 40+ test cases, executed smoke & regression tests, and performed end-to-end API validations.
+          Designed 40+ test cases, executed smoke & regression tests, and performed end-to-end API validations[cite: 10].
         </p>
       </div>
 
@@ -759,7 +795,7 @@
         <div class="project-content">
           <h3 style="color: #fff; margin-bottom: 8px;">Sweet Shop Full Testing Suite</h3>
           <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 15px;">
-            DEPI Capstone project comprising comprehensive manual test cases, Selenium UI automation, execution video, and API tests.
+            DEPI Capstone project comprising comprehensive manual test cases, Selenium UI automation, execution video, and API tests[cite: 10].
           </p>
           <button class="project-btn" onclick="openModal('sweetShopModal')">
             <i class="fa-solid fa-photo-film"></i> View Gallery & Video
@@ -775,7 +811,7 @@
         <div class="project-content">
           <h3 style="color: #fff; margin-bottom: 8px;">FortiGate Network Defense</h3>
           <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 15px;">
-            Enterprise security architecture and network topology configured on FortiGate for NTI graduation requirements.
+            Enterprise security architecture and network topology configured on FortiGate for NTI graduation requirements[cite: 10].
           </p>
           <button class="project-btn" onclick="openModal('fortiGateModal')">
             <i class="fa-solid fa-shield-halved"></i> View 14 Tasks & Screenshots
@@ -814,7 +850,7 @@
             <img src="DEPI Software Tester.png" alt="DEPI Software Tester Certificate" onerror="this.src='depi.png';" />
           </div>
           <h3><i class="fa-solid fa-certificate"></i> DEPI Software Tester</h3>
-          <p style="color: var(--text-muted); font-size: 0.88rem;">Certified by Ministry of Communications & Information Technology (MCIT) - Round 4.</p>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Certified by Ministry of Communications & Information Technology (MCIT) - Round 4[cite: 4].</p>
           <span style="color: var(--accent-cyan); font-size: 0.82rem; margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> View Official Certificate
           </span>
@@ -828,7 +864,7 @@
             <img src="NTI Network Security.png" alt="NTI Network Security Certificate" onerror="this.src='NTI.jpg';" />
           </div>
           <h3><i class="fa-solid fa-award"></i> NTI Network Security</h3>
-          <p style="color: var(--text-muted); font-size: 0.88rem;">Cybersecurity Academy - MCIT & NTI in collaboration with Fortinet & Cisco.</p>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Cybersecurity Academy - MCIT & NTI in collaboration with Fortinet & Cisco[cite: 7].</p>
           <span style="color: var(--accent-cyan); font-size: 0.82rem; margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> View Verified Certificate
           </span>
@@ -856,7 +892,7 @@
             <img src="DEPI Business English Track.png" alt="DEPI Business English Certificate" onerror="this.src='depi.png';" />
           </div>
           <h3><i class="fa-solid fa-language"></i> DEPI Business English Track</h3>
-          <p style="color: var(--text-muted); font-size: 0.88rem;">Professional Business English - MCIT & DEPI Round 4 delivered by OTO Courses.</p>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Professional Business English - MCIT & DEPI Round 4 delivered by OTO Courses[cite: 8].</p>
           <span style="color: var(--accent-cyan); font-size: 0.82rem; margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> View Verified Certificate
           </span>
@@ -894,7 +930,7 @@
 
     <div class="social-links">
       <a href="https://www.linkedin.com/in/abdelrahman-adel6" target="_blank" class="social-btn linkedin hover-vibe">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
+        <i class="fa-brands fa-linkedin"></i> LinkedIn[cite: 10]
       </a>
       <a href="https://github.com/bedoadel646-del" target="_blank" class="social-btn github hover-vibe">
         <i class="fa-brands fa-github"></i> GitHub
@@ -906,7 +942,7 @@
         <i class="fa-brands fa-instagram"></i> Instagram
       </a>
       <a href="mailto:abdelrahman.adel2634@gmail.com" class="social-btn email hover-vibe">
-        <i class="fa-solid fa-envelope"></i> Email Me
+        <i class="fa-solid fa-envelope"></i> Email Me[cite: 10]
       </a>
     </div>
   </section>
@@ -954,7 +990,7 @@
       <button class="modal-close" onclick="closeModal('fortiGateModal')">&times;</button>
       <h2 class="modal-title"><i class="fa-solid fa-shield-halved" style="color: var(--accent-cyan);"></i> FortiGate 7.4 Security Engineering</h2>
       <p style="color: var(--text-muted); font-size: 0.95rem;">
-        Enterprise Security Lab configuration and architecture deployed for NTI Network Security specialization.
+        Enterprise Security Lab configuration and architecture deployed for NTI Network Security specialization[cite: 10].
       </p>
 
       <h3 style="color: var(--accent-cyan); margin-top: 20px;">Detailed 14 Configuration Tasks:</h3>
@@ -969,7 +1005,7 @@
         <li><i class="fa-solid fa-circle-check"></i> 8. Configure Application Control blocking Social Media categories.</li>
         <li><i class="fa-solid fa-circle-check"></i> 9. Configure Antivirus inspection on internet access policy with malware scanning.</li>
         <li><i class="fa-solid fa-circle-check"></i> 10. Configure Intrusion Prevention (IPS) profile applied on internet access policy.</li>
-        <li><i class="fa-solid fa-circle-check"></i> 11. Configure SSL VPN on FortiGate allowing remote access to internal network.</li>
+        <li><i class="fa-solid fa-circle-check"></i> 11. Configure SSL VPN on FortiGate allowing remote access to internal network[cite: 10].</li>
         <li><i class="fa-solid fa-circle-check"></i> 12. Configure Firewall Authentication using local user database before internet access.</li>
         <li><i class="fa-solid fa-circle-check"></i> 13. Create Firewall Policy denying traffic from specific geo-locations/countries to Web Server.</li>
         <li><i class="fa-solid fa-circle-check"></i> 14. Configure Site-to-Site IPsec VPN between two FortiGate devices.</li>
